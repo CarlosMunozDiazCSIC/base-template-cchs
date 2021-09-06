@@ -3,17 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta name="mrf-extractable" content="false">
     <title>Base Template - CSIC Data Visualization</title>
+    <meta name="mrf-extractable" content="false">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Titillium+Web%3A300%2C300italic%2C400%2C400italic%2C700%2C700italic&#038;subset=latin&#038;ver=5.8' type='text/css' media='all' />
 </head>
 <body>
     <div class="container">
-        <div class="content">
+        <div class="main">
+            <section class="content b-chart active">
+                <div class="b-title">
+                    <h1 class="title">Título del gráfico simple</h1>
+                    <h2 class="subtitle">Subtítulo del gráfico simple</h2>
+                </div>                
+                <div class="chart__viz"></div>
+                <div class="chart__footer">
+                    <p class="chart__source"></p>
+                    <p class="chart__copyright"></p>
+                </div>                
+            </section>
+            <section class="content b-notes">
+                <div class="b-title">
+                    <h1 class="title">Notas adicionales al gráfico</h1>
+                </div>   
+            </section>
+            <section class="content b-data">
+                <div class="b-title">
+                    <h1 class="title">Repositorio de datos</h1>
+                </div>   
+            </section>
+            <section class="content b-iframes">
+                <div class="b-title">
+                    <h1 class="title">Iframes a embeber en su página web</h1>
+                </div>                
+                <p class="text"></p>
+            </section>
+        </div>
+        <div class="logo">
 
         </div>
-        <div class="footer">
-
-        </div>
+        <nav class="tabs">
+            <ul class="l-tabs">
+                <li class="tab active" data-target="b-chart">Gráfico</li>
+                <li class="tab" data-target="b-notes">Notas</li>
+                <li class="tab" data-target="b-data">Datos</li>
+                <li class="tab" data-target="b-iframes">Embeber</li>
+            </ul>
+        </nav>
     </div>
 </body>
 </html>

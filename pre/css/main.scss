@@ -2,4 +2,129 @@
 
 * {
     margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Titilium Web', sans-serif;
+
+    //Tamaño de elementos para utilizar REMs posteriormente
+    font-size: 16px;
+}
+
+.container {
+    width: 100%;
+    max-width: 768px;
+    height: 632px; //Puede cambiar
+    margin: 0 auto;
+
+    position: relative;
+}
+
+//Logo
+.logo {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+
+    width: 80px;
+    height: 40px;
+
+    background-color: red;
+}
+
+//Cuerpo importante del desarrollo
+.main {
+    width: 100%;
+    height: 600px;
+
+    position: relative;
+
+    .content {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        padding: 8px 12px;
+
+        width: 100%;
+        height: 100%;
+
+        display: none;
+
+        //Estado activo
+        &.active {
+            display: block;
+        }
+    }
+}
+
+//Contenedores genéricos > En su interior, elementos propios de cada contenedor
+.b-chart {
+    
+}
+
+//Elementos genéricos en contenedores
+.b-title {
+    width: 100%;
+    max-width: calc(100% - 100px);
+    min-height: 40px;
+
+    .title {
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+        font-weight: 400;
+    
+        margin-top: 8px;
+    }
+}
+
+
+//Pestañas inferiores
+.tabs {
+    width: 100%;
+    height: 32px;    
+
+    .l-tabs {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        
+        .tab {
+            width: 25%;
+            box-sizing: border-box;
+            border-top: 1px solid #e1e1e1;
+            border-bottom: 1px solid #e1e1e1;      
+            border-right: 1px solid #e1e1e1;
+
+            &:first-child {
+                border-left: 1px solid #e1e1e1;
+            }
+
+            font-size: .85rem;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            cursor: pointer;
+
+            //Estilo
+            background-color: #fafbfd;
+            color: #000;
+
+            //Estado active
+            &.active {
+                background-color: #fff;
+                color: #000;
+
+                border-top: 0px;
+                border-bottom: 2px solid #4E7E7E;
+            }
+        }        
+    }
 }
