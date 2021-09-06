@@ -21,30 +21,16 @@ body {
     position: relative;
 }
 
-//Logo
-.logo {
-    position: absolute;
-    top: 8px;
-    right: 12px;
-
-    width: 80px;
-    height: 40px;
-
-    background-color: red;
-}
-
 //Cuerpo importante del desarrollo
 .main {
     width: 100%;
-    height: 600px;
-
-    position: relative;
+    height: 588px;
 
     .content {
         position: relative;
         top: 0px;
         left: 0px;
-        padding: 8px 12px;
+        padding: 8px 0px;
 
         width: 100%;
         height: 100%;
@@ -56,11 +42,80 @@ body {
             display: block;
         }
     }
+
+    .content::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    .content::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+        border-radius: 10px;
+    }
+    
+    .content::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    }
 }
 
 //Contenedores genéricos > En su interior, elementos propios de cada contenedor
 .b-chart {
-    
+    .chart {
+        &__logics {
+            min-height: 70px;
+            margin-top: 12px;
+
+            &--options {
+                width: 100%;
+                height: 40px;
+                background-color: #cecece;
+            }
+
+            &--legend {
+                width: 100%;
+                height: 22px;
+                background-color: #cecece;
+                margin-top: 8px;
+            }
+        }
+        &__viz {
+            height: auto;
+            background-color: red;
+            margin-top: 12px;
+        }
+
+        &__footer {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            font-size: 0.85rem;
+
+            .chart__source {
+                margin-right: 16px;
+            }
+
+            .chart__source, .chart__copyright {
+                margin-top: 8px;
+            }
+        }
+    }
+
+    //Logo > Dentro del bloque b-chart
+    .logo {
+        position: absolute;
+        top: 8px;
+        right: 0px;
+
+        width: 80px;
+        height: 40px;
+
+        background-color: red;
+    }
+}
+
+.b-notes, .b-data, .b-iframes {
+    overflow-y: auto;
 }
 
 //Elementos genéricos en contenedores
@@ -68,6 +123,11 @@ body {
     width: 100%;
     max-width: calc(100% - 100px);
     min-height: 40px;
+    margin-bottom: 16px;
+
+    .b-chart & {
+        margin-bottom: 0px;
+    }
 
     .title {
         font-size: 1.25rem;
@@ -82,11 +142,49 @@ body {
     }
 }
 
+.text {
+    &__header {
+        font-size: 0.9rem;
+        font-weight: 400;
+        text-decoration: underline;     
+        text-decoration-color: #4E7E7E; 
+        margin-bottom: 12px;
+    }
+    &__paragraph {
+        font-size: 0.9rem;
+        font-weight: 400;
+        margin-bottom: 8px;
+    }
+
+    &__iframe {
+        width: 100%;
+        height: 120px;
+
+        margin-bottom: 8px;
+    }
+}
+
+.link {
+    border-bottom: 1px solid #4E7E7E;
+    color: #000;
+    text-decoration: none;
+}
+
+.btn {
+    background-color: #e1e1e1;
+    border: 2px solid #4E7E7E;
+    padding: 0px 8px;
+    border-radius: 3px;
+
+    cursor: pointer;
+
+    font-size: 0.9rem;
+}
 
 //Pestañas inferiores
 .tabs {
     width: 100%;
-    height: 32px;    
+    height: 32px;
 
     .l-tabs {
         width: 100%;
@@ -126,5 +224,20 @@ body {
                 border-bottom: 2px solid #4E7E7E;
             }
         }        
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .b-chart .logo {
+        right: 12px;
+    }
+    .main {
+        .content {
+            padding: 8px 12px;
+        }
+    }
+
+    .tabs {
+        padding: 0px 12px;
     }
 }
