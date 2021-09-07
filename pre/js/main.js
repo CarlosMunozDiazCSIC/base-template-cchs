@@ -9,11 +9,12 @@ function setChartHeight() {
     let titleBlock = document.getElementsByClassName('b-title')[0].clientHeight;
     let logicBlock = document.getElementsByClassName('chart__logics')[0].clientHeight;
     let footerBlock = document.getElementsByClassName('chart__footer')[0].clientHeight;
+    let footerTop = 8, containerPadding = 8, marginTitle = 16, marginLogics = 16;
 
     //Comprobar previamente la altura que le demos al MAIN. El estado base es 588 pero podemos hacerlo más o menos alto en función de nuestros intereses
 
-    let height = 540; //588 - 8px top del footer - 12px del padding del contenedor - 16px de margen del bloque del título - 16 de su margen bottom de la lógica
-    document.getElementsByClassName('chart__viz')[0].style.height = height - titleBlock - logicBlock - footerBlock + 'px';
+    let height = 600; //Altura total del main | Cambiar cuando sea necesario
+    document.getElementsByClassName('chart__viz')[0].style.height = height - titleBlock - logicBlock - footerBlock - footerTop - containerPadding - marginTitle - marginLogics + 'px';
 }
 
 setChartHeight();
